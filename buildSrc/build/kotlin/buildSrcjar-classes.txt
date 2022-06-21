@@ -1,0 +1,1 @@
+C:\boot\amor\Eventos-Sicredi\buildSrc\build\classes\kotlin\main\AppConfig.class;C:\boot\amor\Eventos-Sicredi\buildSrc\build\classes\kotlin\main\AppDependencies.class;C:\boot\amor\Eventos-Sicredi\buildSrc\build\classes\kotlin\main\Versions.class

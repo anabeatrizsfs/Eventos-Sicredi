@@ -1,43 +1,63 @@
 plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+    id("com.android.application")
+    kotlin("android")
 }
 
 android {
-    compileSdk 32
+    compileSdk = AppConfig.compileSdk
+    buildToolsVersion = AppConfig.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.beatriz.eventos"
-        minSdk 19
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        applicationId = "com.beatriz.eventos"
+        minSdk = AppConfig.minSdk
+        targetSdk = AppConfig.targetSdk
+        versionCode = AppConfig.versionCode
+        versionName = AppConfig.versionName
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = AppConfig.androidTestInstrumentation
     }
 
     buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        getByName("release") {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+    viewBinding {
+        android.buildFeatures.viewBinding = true
+        android.buildFeatures.dataBinding = true
     }
-    kotlinOptions {
-        jvmTarget = '1.8'
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
 
 dependencies {
+    //app libs
+    implementation(AppDependencies.kotlinStdLib)
+    implementation(AppDependencies.kotlinStd)
+    implementation(AppDependencies.coreKtx)
+    implementation(AppDependencies.constraintLayout)
+    implementation(AppDependencies.appcompat)
+    implementation(AppDependencies.material)
+    implementation(AppDependencies.navigationFragmentKtx)
+    implementation(AppDependencies.navigationUiKtx)
+    implementation(AppDependencies.lifecycleLiveDataKtx)
+    implementation(AppDependencies.lifecycleExtensions)
+    implementation(AppDependencies.lifecycleViewmodel)
+    implementation(AppDependencies.koinAndroid)
+    implementation(AppDependencies.koinAndroidCompat)
+    implementation(AppDependencies.koinAndroidWorkNavigation)
+    implementation(AppDependencies.koinAndroidWorkmanager)
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.2'
-    implementation 'com.google.android.material:material:1.6.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    //test libs
+    testImplementation(AppDependencies.junit)
+    androidTestImplementation(AppDependencies.extJUnit)
+    androidTestImplementation(AppDependencies.espressoCore)
+
 }
