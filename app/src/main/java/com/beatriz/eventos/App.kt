@@ -1,7 +1,9 @@
 package com.beatriz.eventos
 
 import android.app.Application
-import com.beatriz.eventos.di.EventModule.networkModule
+import com.beatriz.eventos.data.di.DataModule.networkModules
+import com.beatriz.eventos.di.EventModule.retrofitModule
+import com.beatriz.eventos.di.EventModule.viewModelModule
 import org.koin.core.context.startKoin
 
 class App : Application() {
@@ -10,7 +12,11 @@ class App : Application() {
         super.onCreate()
 
         startKoin {
-            modules(networkModule)
+            modules(
+                retrofitModule,
+                networkModules,
+                viewModelModule
+            )
         }
     }
 }

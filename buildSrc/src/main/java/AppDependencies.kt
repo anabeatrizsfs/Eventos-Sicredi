@@ -34,6 +34,8 @@ object AppDependencies {
         "io.insert-koin:koin-androidx-navigation:${Versions.koin}"
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val okHttp = "com.squareup.okhttp3:okhttp:${Versions.okHttp}"
+    const val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.gsonConverter}"
+    const val gson = "com.google.code.gson:gson:${Versions.gson}"
 
     //test libs
     const val junit = "junit:junit:${Versions.junit}"

@@ -56,6 +56,8 @@ dependencies {
     implementation(AppDependencies.koinAndroidWorkmanager)
     implementation(AppDependencies.retrofit)
     implementation(AppDependencies.okHttp)
+    implementation(AppDependencies.gsonConverter)
+    implementation(AppDependencies.gson)
 
     //test libs
     testImplementation(AppDependencies.junit)
