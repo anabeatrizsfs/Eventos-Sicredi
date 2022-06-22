@@ -1,7 +1,8 @@
-package com.beatriz.eventos
+package com.beatriz.eventos.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.beatriz.eventos.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

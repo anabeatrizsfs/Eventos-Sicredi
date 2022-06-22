@@ -32,6 +32,8 @@ object AppDependencies {
         "io.insert-koin:koin-androidx-workmanager:${Versions.koin}"
     const val koinAndroidWorkNavigation =
         "io.insert-koin:koin-androidx-navigation:${Versions.koin}"
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val okHttp = "com.squareup.okhttp3:okhttp:${Versions.okHttp}"
 
     //test libs
     const val junit = "junit:junit:${Versions.junit}"

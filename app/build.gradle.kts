@@ -54,6 +54,8 @@ dependencies {
     implementation(AppDependencies.koinAndroidCompat)
     implementation(AppDependencies.koinAndroidWorkNavigation)
     implementation(AppDependencies.koinAndroidWorkmanager)
+    implementation(AppDependencies.retrofit)
+    implementation(AppDependencies.okHttp)
 
     //test libs
     testImplementation(AppDependencies.junit)

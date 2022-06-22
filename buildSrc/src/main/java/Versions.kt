@@ -12,6 +12,8 @@ object Versions {
 
     //external
     const val koin = "3.2.0"
+    const val retrofit = "2.9.0"
+    const val okHttp = "4.1.0"
 
     //app level
     const val gradlePlugin = "7.1.3"
