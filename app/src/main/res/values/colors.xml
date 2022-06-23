@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="button_color">#6064ca</color>
+    <color name="gradient_start_color">#150942</color>
+    <color name="gradient_end_color">#1F1D23</color>
+    <color name="font_color_title">#141414</color>
+    <color name="font_color_subtitle">#bebebe</color>
+    <color name="background_price">#74d189</color>
 </resources>

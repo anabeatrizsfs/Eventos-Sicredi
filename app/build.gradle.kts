@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     kotlin("android")
+    kotlin("kapt")
 }
 
 android {
@@ -58,6 +59,11 @@ dependencies {
     implementation(AppDependencies.okHttp)
     implementation(AppDependencies.gsonConverter)
     implementation(AppDependencies.gson)
+    implementation(AppDependencies.roundedImageView)
+    implementation(AppDependencies.lottie)
+    implementation("androidx.appcompat:appcompat:1.4.2")
+    implementation("com.google.android.material:material:1.6.1")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
     //test libs
     testImplementation(AppDependencies.junit)

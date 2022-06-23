@@ -36,6 +36,10 @@ object AppDependencies {
     const val okHttp = "com.squareup.okhttp3:okhttp:${Versions.okHttp}"
     const val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.gsonConverter}"
     const val gson = "com.google.code.gson:gson:${Versions.gson}"
+    const val roundedImageView =
+        "com.makeramen:roundedimageview:${Versions.roundedImageView}"
+    const val lottie =
+        "com.airbnb.android:lottie:${Versions.lottie}"
 
     //test libs
     const val junit = "junit:junit:${Versions.junit}"

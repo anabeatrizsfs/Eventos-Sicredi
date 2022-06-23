@@ -13,7 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EventosSicredi">
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.event.EventDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EventosSicredi.Detail" />
+        <activity
+            android:name=".ui.welcome.WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +25,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

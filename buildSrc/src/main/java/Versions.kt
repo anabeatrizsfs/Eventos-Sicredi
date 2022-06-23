@@ -16,6 +16,8 @@ object Versions {
     const val okHttp = "3.12.12"
     const val gsonConverter = "2.8.1"
     const val gson = "2.8.6"
+    const val roundedImageView = "2.3.0"
+    const val lottie = "5.2.0"
 
     //app level
     const val gradlePlugin = "7.1.3"
