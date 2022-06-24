@@ -1,4 +1,3 @@
-//app level config constants
 object AppConfig {
     const val compileSdk = 32
     const val minSdk = 19
