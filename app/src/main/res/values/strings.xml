@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Eventos-Sicredi</string>
+    <string name="success_checkin">O checkin foi feito com sucesso!</string>
+    <string name="error_checkin">Houve um problema ao fazer o checkin!</string>
+    <string name="title_share">Não perca!</string>
+    <string name="title_event_detail">Detalhe do Evento</string>
+    <string name="error_message">Não foi possível carregar o evento...</string>
+    <string name="description">Descrição</string>
+    <string name="checkin">Fazer checkin</string>
+    <string name="news">Novidades</string>
+    <string name="title_home">Descubra novos lugares para ir</string>
+    <string name="events">Eventos</string>
+    <string name="welcome">Olá, seja bem-vindo ao aplicativo Eventos!</string>
+    <string name="description_home">No aplicativo Eventos você só vai conhecer vários eventos super legais e todas as informações de como você pode curtir</string>
+    <string name="email">Email</string>
+    <string name="name">Nome</string>
+    <string name="discovery">Quero conhecer</string>
 </resources>

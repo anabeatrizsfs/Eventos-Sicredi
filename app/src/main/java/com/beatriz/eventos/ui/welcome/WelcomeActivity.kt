@@ -1,26 +1,32 @@
 package com.beatriz.eventos.ui.welcome
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.beatriz.eventos.R
-import com.beatriz.eventos.data.constants.EventConstants.EVENT_ID
+import androidx.appcompat.app.AppCompatActivity
 import com.beatriz.eventos.databinding.ActivityWelcomeBinding
-import com.beatriz.eventos.ui.event.EventDetailActivity
+import com.beatriz.eventos.ui.main.MainActivity
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class WelcomeActivity : AppCompatActivity() {
+    private val welcomeViewModel: WelcomeViewModel by viewModel()
+    private lateinit var binding: ActivityWelcomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        ActivityWelcomeBinding.inflate(layoutInflater).apply {
+        binding = ActivityWelcomeBinding.inflate(layoutInflater).apply {
             setContentView(root)
 
+            viewModel = welcomeViewModel
             btnStart.setOnClickListener {
-                startActivity(Intent(this@WelcomeActivity, EventDetailActivity::class.java).apply {
-                    putExtra(EVENT_ID, 1)
+                welcomeViewModel.setUser()
+                startActivity(Intent(this@WelcomeActivity, MainActivity::class.java).apply {
                     finish()
                 })
             }
+        }
+
+        welcomeViewModel.btnEnabled.observe(this) {
+            binding.btnStart.isEnabled = it
         }
     }
 }

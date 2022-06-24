@@ -26,7 +26,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:title="Detalhe do Evento" />
+            app:title="@string/title_event_detail" />
 
         <LinearLayout
             android:id="@+id/box_error"
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
-            app:visibility="@{viewmodel.errorVisibility}"
+            android:visibility="gone"
             app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
             <com.airbnb.lottie.LottieAnimationView
@@ -47,19 +47,16 @@
 
             <TextView
                 android:id="@+id/error_message"
+                style="@style/ErrorMessage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/hkgrotesk_bold"
-                android:text="Não foi possível carregar o evento..."
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:text="@string/error_message" />
         </LinearLayout>
 
         <ScrollView
             android:id="@+id/events_scroll"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:visibility="@{!viewmodel.errorVisibility}"
             app:layout_constraintBottom_toTopOf="@+id/box_checkin"
             app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
@@ -77,29 +74,29 @@
                     android:layout_marginEnd="14dp"
                     android:layout_marginBottom="14dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/event_example"
+                    app:image="@{event.image}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:riv_corner_radius="24dp" />
+                    app:riv_corner_radius="@dimen/margin_large2"
+                    tools:src="@drawable/placeholder" />
 
                 <TextView
                     android:id="@+id/event_title"
+                    style="@style/Title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/image_event"
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="18dp"
+                    android:layout_marginTop="@dimen/margin_large"
                     android:layout_toStartOf="@+id/price"
-                    android:fontFamily="@font/hkgrotesk_bold"
                     android:text="@{event.title}"
-                    android:textColor="@color/font_color_title"
-                    android:textSize="28sp"
                     app:layout_constraintStart_toStartOf="parent"
                     tools:text="Título do Evento" />
 
                 <TextView
                     android:id="@+id/price"
+                    style="@style/Price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/image_event"
@@ -107,52 +104,51 @@
                     android:layout_marginTop="28dp"
                     android:layout_marginEnd="17dp"
                     android:background="@drawable/background_price"
-                    android:fontFamily="@font/hkgrotesk_bold"
-                    android:paddingStart="18dp"
+                    android:paddingStart="@dimen/margin_large"
                     android:paddingTop="8dp"
-                    android:paddingEnd="18dp"
+                    android:paddingEnd="@dimen/margin_large"
                     android:paddingBottom="8dp"
-                    android:textColor="@color/white"
+                    app:formatMoney="@{event.price}"
                     tools:text="R$ 12,00" />
-                <!--                    android:text="@{event.price}"-->
 
                 <TextView
                     android:id="@+id/event_time"
+                    style="@style/SubTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/event_title"
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="6dp"
-                    android:text="22 de Maio - 18:00"
-                    android:textColor="@color/font_color_subtitle"
+                    app:formatDate="@{event.date}"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/event_title" />
+                    app:layout_constraintTop_toBottomOf="@+id/event_title"
+                    tools:text="22 de Maio - 18:00" />
 
                 <TextView
                     android:id="@+id/event_description_title"
+                    style="@style/Title2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/event_time"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="22dp"
-                    android:fontFamily="@font/hkgrotesk_bold"
-                    android:text="Descrição"
+                    android:text="@string/description"
                     android:textColor="@color/font_color_title"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/event_time" />
 
                 <TextView
                     android:id="@+id/event_description"
+                    style="@style/SubTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_below="@id/event_description_title"
                     android:layout_alignParentBottom="true"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="12dp"
-                    android:paddingBottom="18dp"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:paddingBottom="@dimen/margin_large"
                     android:text="@{event.description}"
-                    android:textColor="@color/font_color_subtitle"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/event_description_title"
                     tools:text="Uma maratona de programação, na qual estudantes e profissionais das áreas de DESIGN, PROGRAMAÇÃO e MARKETING se reunirão para criar projetos com impacto social positivo através dos pilares de Educação Financeira e Colaborar para Transformar.\n\nO evento será realizado por duas empresas que são movidas pela transformação: o Woop Sicredi e a Smile Flame.\n\n// Pra ficar esperto:\n\n- 31/08, 01 e 02 de Setembro, na PUCRS;\n- 34 horas de duração;\n- Atividades direcionadas para criação de soluções digitais de impacto social;\n- Mentorias para apoiar o desenvolvimento das soluções;\n- Conteúdo de apoio; \n- Alimentação inclusa;\n\n// Programação\n\nSexta-feira - 31/08 - 19h ás 22h\nSábado e Domingo - 01 e 02/09 - 9h do dia 01/09 até as 18h do dia 02/09.\n\n// Realização\nWoop Sicredi\nSmile Flame\n\nMaiores infos em: https://www.hackathonsocial.com.br/\nTá com dúvida? Manda um e-mail pra gabriel@smileflame.com\n\nEaí, ta tão animado quanto nós? Let´s hack!" />
@@ -163,9 +159,10 @@
             android:id="@+id/box_checkin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="18dp"
+            android:padding="@dimen/margin_large"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -173,11 +170,11 @@
             <com.makeramen.roundedimageview.RoundedImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginEnd="18dp"
+                android:layout_marginEnd="@dimen/margin_large"
                 android:background="@color/white"
-                android:elevation="10dp"
+                android:elevation="@dimen/elevation"
                 android:outlineProvider="paddedBounds"
-                android:padding="15dp"
+                android:padding="@dimen/margin_medium"
                 android:src="@drawable/ic_sharing"
                 android:translationZ="20dp"
                 app:riv_corner_radius="360dp"
@@ -185,19 +182,22 @@
 
             <Button
                 android:id="@+id/btn_checkin"
+                style="@style/Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_button"
-                android:backgroundTint="@color/button_color"
-                android:fontFamily="@font/hkgrotesk_bold"
-                android:paddingStart="32dp"
-                android:paddingTop="12dp"
-                android:paddingEnd="32dp"
-                android:paddingBottom="12dp"
-                android:text="Fazer checkin"
-                android:textAllCaps="false"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:paddingStart="@dimen/margin_large3"
+                android:paddingTop="@dimen/margin_small"
+                android:paddingEnd="@dimen/margin_large3"
+                android:paddingBottom="@dimen/margin_small"
+                android:text="@string/checkin" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/loading"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:visibility="gone"
+                app:lottie_rawRes="@raw/local_loading" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

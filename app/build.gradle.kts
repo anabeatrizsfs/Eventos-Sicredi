@@ -14,7 +14,7 @@ android {
         targetSdk = AppConfig.targetSdk
         versionCode = AppConfig.versionCode
         versionName = AppConfig.versionName
-
+        multiDexEnabled = true
         testInstrumentationRunner = AppConfig.androidTestInstrumentation
     }
 
@@ -56,12 +56,18 @@ dependencies {
     implementation(AppDependencies.koinAndroidWorkNavigation)
     implementation(AppDependencies.koinAndroidWorkmanager)
     implementation(AppDependencies.retrofit)
-    implementation(AppDependencies.okHttp)
+    implementation(AppDependencies.okHttp) {
+        isForce = true //Fix API 19 support
+    }
+    implementation(AppDependencies.logInterpector)
     implementation(AppDependencies.gsonConverter)
     implementation(AppDependencies.gson)
     implementation(AppDependencies.roundedImageView)
     implementation(AppDependencies.lottie)
     implementation(AppDependencies.skeleton)
+    implementation(AppDependencies.glide)
+    annotationProcessor(AppDependencies.glideCompiler)
+    implementation(AppDependencies.multidex)
 
     //test libs
     testImplementation(AppDependencies.junit)

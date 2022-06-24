@@ -1,4 +1,3 @@
-//version constants for the Kotlin DSL dependencies
 object Versions {
 
     // ui
@@ -19,10 +18,14 @@ object Versions {
     const val roundedImageView = "2.3.0"
     const val lottie = "5.2.0"
     const val skeleton = "4.0.0"
+    const val glide = "4.13.0"
+    const val glideCompiler = "4.13.0"
 
     //app level
     const val gradlePlugin = "7.1.3"
     const val kotlin = "1.6.0"
+    const val multidex = "2.0.1"
+    const val logInterceptor = "3.12.12"
 
     //libs
     const val coreKtx = "1.8.0"

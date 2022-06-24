@@ -2,7 +2,6 @@ package com.beatriz.eventos.data.network.api
 
 import com.beatriz.eventos.data.model.EventCheckinRequest
 import com.beatriz.eventos.data.model.EventResponse
-import okhttp3.Call
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="event"
+            type="com.beatriz.eventos.data.model.EventResponse" />
+
+        <variable
+            name="listener"
+            type="com.beatriz.eventos.ui.main.adapter.EventListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_event"
+        android:layout_width="300dp"
+        android:layout_height="500dp"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:onClick="@{() -> listener.onEventClicked(event)}"
+        app:cardCornerRadius="20dp">
+
+        <RelativeLayout
+            android:id="@+id/box_event"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:image="@{event.image}"
+                tools:src="@drawable/placeholder" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_event_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_medium"
+                    android:paddingStart="@dimen/margin_large"
+                    android:paddingEnd="@dimen/margin_large">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:fontFamily="@font/hkgrotesk_bold"
+                        android:text="@{event.title}"
+                        tools:text="Titulo do Evento" />
+
+                    <TextView
+                        style="@style/SubTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:formatDate="@{event.date}"
+                        tools:text="23 de Junho - 2022" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

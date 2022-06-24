@@ -42,6 +42,12 @@ object AppDependencies {
         "com.airbnb.android:lottie:${Versions.lottie}"
     const val skeleton =
         "com.faltenreich:skeletonlayout:${Versions.skeleton}"
+    const val glide =
+        "com.github.bumptech.glide:glide:${Versions.glide}"
+    const val glideCompiler =
+        "com.github.bumptech.glide:compiler:${Versions.glide}"
+    const val multidex = "androidx.multidex:multidex:${Versions.multidex}"
+    const val logInterpector = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp}"
 
     //test libs
     const val junit = "junit:junit:${Versions.junit}"
