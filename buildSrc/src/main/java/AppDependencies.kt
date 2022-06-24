@@ -36,6 +36,18 @@ object AppDependencies {
     const val okHttp = "com.squareup.okhttp3:okhttp:${Versions.okHttp}"
     const val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.gsonConverter}"
     const val gson = "com.google.code.gson:gson:${Versions.gson}"
+    const val roundedImageView =
+        "com.makeramen:roundedimageview:${Versions.roundedImageView}"
+    const val lottie =
+        "com.airbnb.android:lottie:${Versions.lottie}"
+    const val skeleton =
+        "com.faltenreich:skeletonlayout:${Versions.skeleton}"
+    const val glide =
+        "com.github.bumptech.glide:glide:${Versions.glide}"
+    const val glideCompiler =
+        "com.github.bumptech.glide:compiler:${Versions.glide}"
+    const val multidex = "androidx.multidex:multidex:${Versions.multidex}"
+    const val logInterpector = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp}"
 
     //test libs
     const val junit = "junit:junit:${Versions.junit}"

@@ -8,5 +8,5 @@ data class EventResponse(
     val latitude: String,
     val price: Float,
     val title: String,
-    val id: Int,
+    val id: Int
 )

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="radius_button">50dp</dimen>
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="margin_medium">12dp</dimen>
+    <dimen name="margin_large">18dp</dimen>
+    <dimen name="margin_large2">24dp</dimen>
+    <dimen name="margin_large3">32dp</dimen>
+    <dimen name="elevation">10dp</dimen>
+</resources>

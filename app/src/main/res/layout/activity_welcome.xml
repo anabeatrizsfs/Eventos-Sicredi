@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.beatriz.eventos.ui.welcome.WelcomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_welcome"
+        android:clipToPadding="false"
+        tools:context=".ui.welcome.WelcomeActivity">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background_event" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_welcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:cardCornerRadius="@dimen/margin_large2"
+            app:cardElevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_large2">
+
+                <TextView
+                    android:id="@+id/welcome_title"
+                    style="@style/Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_large2"
+                    android:layout_marginBottom="@dimen/margin_large"
+                    android:gravity="center"
+                    android:text="@string/welcome" />
+
+                <TextView
+                    android:id="@+id/welcome_subtitle"
+                    style="@style/SubTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_large2"
+                    android:gravity="center"
+                    android:text="@string/description_home"
+                    android:textColor="@color/font_color_subtitle" />
+
+                <EditText
+                    android:id="@+id/edt_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:onTextChanged="@{() -> viewModel.validateForms()}"
+                    android:text="@={viewModel.email}" />
+
+                <EditText
+                    android:id="@+id/edt_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_large2"
+                    android:hint="@string/name"
+                    android:inputType="textCapWords"
+                    android:onTextChanged="@{() -> viewModel.validateForms()}"
+                    android:text="@={viewModel.name}" />
+
+                <Button
+                    android:id="@+id/btn_start"
+                    style="@style/Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button"
+                    android:enabled="@{viewModel.btnEnabled}"
+                    android:paddingStart="@dimen/margin_large3"
+                    android:paddingTop="@dimen/margin_medium"
+                    android:paddingEnd="@dimen/margin_large3"
+                    android:paddingBottom="@dimen/margin_medium"
+                    android:text="@string/discovery" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/icon_welcome"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="-25dp"
+            android:background="@color/white"
+            android:elevation="10dp"
+            android:outlineProvider="paddedBounds"
+            android:padding="@dimen/margin_medium"
+            android:src="@drawable/ic_confetti"
+            android:translationZ="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/card_welcome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:riv_corner_radius="360dp"
+            app:riv_mutate_background="true"
+            app:riv_oval="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
