@@ -2,7 +2,7 @@
 
 <br />
 <p align="center">
-  <h3 align="center">Eventos - Desafio Sicredi</h3><p align="center">
+  <h3 align="center">Eventos - Desafio Sicredi/Soft Design</h3><p align="center">
     <br />
   </p>
 </p>
