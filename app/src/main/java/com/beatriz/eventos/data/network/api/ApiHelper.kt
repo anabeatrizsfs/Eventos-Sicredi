@@ -8,5 +8,15 @@ class ApiHelper(private val apiService: EventAPI) {
 
     suspend fun getEvent(id: Int) = apiService.getEvent(id)
 
-    suspend fun checkin(body: EventCheckinRequest) = apiService.checkin(body)
+    suspend fun checkIn(
+        id: Int,
+        name: String,
+        email: String
+    ) = apiService.checkIn(
+        EventCheckinRequest(
+            id,
+            name,
+            email
+        )
+    )
 }

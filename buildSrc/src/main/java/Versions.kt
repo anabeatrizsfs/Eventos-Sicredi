@@ -18,6 +18,7 @@ object Versions {
     const val gson = "2.8.6"
     const val roundedImageView = "2.3.0"
     const val lottie = "5.2.0"
+    const val skeleton = "4.0.0"
 
     //app level
     const val gradlePlugin = "7.1.3"

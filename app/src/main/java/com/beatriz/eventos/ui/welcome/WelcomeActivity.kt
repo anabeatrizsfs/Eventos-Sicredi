@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.beatriz.eventos.R
+import com.beatriz.eventos.data.constants.EventConstants.EVENT_ID
 import com.beatriz.eventos.databinding.ActivityWelcomeBinding
 import com.beatriz.eventos.ui.event.EventDetailActivity
 
@@ -15,8 +16,10 @@ class WelcomeActivity : AppCompatActivity() {
             setContentView(root)
 
             btnStart.setOnClickListener {
-                startActivity(Intent(this@WelcomeActivity, EventDetailActivity::class.java))
-                finish()
+                startActivity(Intent(this@WelcomeActivity, EventDetailActivity::class.java).apply {
+                    putExtra(EVENT_ID, 1)
+                    finish()
+                })
             }
         }
     }

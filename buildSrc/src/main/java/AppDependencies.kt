@@ -40,6 +40,8 @@ object AppDependencies {
         "com.makeramen:roundedimageview:${Versions.roundedImageView}"
     const val lottie =
         "com.airbnb.android:lottie:${Versions.lottie}"
+    const val skeleton =
+        "com.faltenreich:skeletonlayout:${Versions.skeleton}"
 
     //test libs
     const val junit = "junit:junit:${Versions.junit}"

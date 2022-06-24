@@ -3,6 +3,7 @@ package com.beatriz.eventos.di
 import com.beatriz.eventos.data.constants.EventConstants.BASE_URL
 import com.beatriz.eventos.data.network.api.EventAPI
 import com.beatriz.eventos.ui.MainViewModel
+import com.beatriz.eventos.ui.event.EventDetailViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -22,6 +23,9 @@ object EventModule {
     val viewModelModule = module {
         viewModel {
             MainViewModel(get())
+        }
+        viewModel {
+            EventDetailViewModel(get())
         }
     }
 }
